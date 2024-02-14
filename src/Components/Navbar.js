@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 
+
 export class Navbar extends Component {
 
+  
   render() {
     return (
       <div>
@@ -33,11 +35,11 @@ export class Navbar extends Component {
         <li className="nav-item">
           <Link className="nav-link" to="/science">Science</Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item ">
           <Link className="nav-link" to="/sports">Sports</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/technology">Technology</Link>
+          <Link className="nav-link"  to="/technology">Technology</Link>
         </li>
 
       </ul>
