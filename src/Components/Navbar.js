@@ -2,12 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className={`navbar fixed-top navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
         <div className="container-fluid">
-          <Link className="navbar-brand" to="#">Kiran Kumar Reddy</Link>
+          <Link className="navbar-brand" to="/">Kiran Kumar Reddy</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -16,7 +16,6 @@ export default function Navbar() {
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/">Home</Link>
               </li>
-
               <li className="nav-item">
                 <Link className="nav-link" to="/business">Business</Link>
               </li>
@@ -40,8 +39,12 @@ export default function Navbar() {
               </li>
 
             </ul>
-
+            <div className="form-check form-switch">
+            <input className="form-check-input" onClick={props.changeMode} type="checkbox" id="flexSwitchCheckDefault" />
+            <label className={`form-check-label text-${props.mode == 'light'?'dark':'light'}`} htmlFor="flexSwitchCheckDefault">{props.mode=='light'?'Enable':'Disable'} Dark Mode</label>
           </div>
+          </div>
+         
         </div>
       </nav>
     </div>
